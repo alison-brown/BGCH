@@ -1,6 +1,6 @@
-public class ArrayLocate<ArrayType> {
+public class ArrayLocate {
 
-    public Integer findStartIndexOfMatchingSubArray(ArrayType[] parentValues, ArrayType[] matchValues) {
+    public static <ArrayType> Integer findStartIndexOfMatchingSubArray(ArrayType[] parentValues, ArrayType[] matchValues) {
         if (parentValues == null || matchValues == null || matchValues.length > parentValues.length) {
             return null;
         }
@@ -9,7 +9,7 @@ public class ArrayLocate<ArrayType> {
                 boolean valueMatches = valuesMatch(parentValues[parentIndex + matchIndex], (matchValues[matchIndex]));
                 if (!valueMatches) {
                     break;
-                } else if (valueMatches && matchIndex == matchValues.length - 1) {
+                } else if (matchIndex == matchValues.length - 1) {
                     return parentIndex;
                 }
             }
@@ -17,7 +17,7 @@ public class ArrayLocate<ArrayType> {
         return null;
     }
 
-    private boolean valuesMatch(ArrayType first, ArrayType second) {
+    private static <ArrayType> boolean valuesMatch(ArrayType first, ArrayType second) {
         return first == null ? second == null : first.equals(second);
     }
 }
