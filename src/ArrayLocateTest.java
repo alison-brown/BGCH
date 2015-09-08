@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 public class ArrayLocateTest {
 
-    private final ArrayLocate<Integer> objectUnderTest= new ArrayLocate<Integer>();
-
     private static final Integer TWO = 2;
+
+    private final ArrayLocate<Integer> objectUnderTest= new ArrayLocate<Integer>();
 
     @Test
     public void testWillReturnNullWhenMatchNotFound() {
